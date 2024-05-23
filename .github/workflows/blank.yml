@@ -28,6 +28,8 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a SSH command remotely
         run: |
-          echo ${{ secrets.SSH_SECRET_KEY }} > moongy-key.pem
+          ls
+          echo "${{ secrets.SSH_SECRET_KEY }}" > moongy-key.pem
           chmod 400 moongy-key.pem
+          cat moongy-key.pem
           ssh -i moongy-key.pem ubuntu@ec2-44-223-24-163.compute-1.amazonaws.com "ls -all"
