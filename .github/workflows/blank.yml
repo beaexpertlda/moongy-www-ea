@@ -32,4 +32,4 @@ jobs:
           ls
           echo "${{ secrets.SSH_SECRET_KEY }}" > moongy-key.pem
           chmod 400 moongy-key.pem 
-          scp -o StrictHostKeyChecking=no -i moongy-key.pem index.html ubuntu@ubuntu@ec2-44-223-24-163.compute-1.amazonaws.com:/var/www/html/ea/
+          scp -o StrictHostKeyChecking=no -i moongy-key.pem index.html ubuntu@ec2-44-223-24-163.compute-1.amazonaws.com:/var/www/html/ea/
