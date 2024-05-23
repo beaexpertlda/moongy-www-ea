@@ -30,4 +30,4 @@ jobs:
         run: |
           echo ${{ secrets.SSH_SECRET_KEY }} > moongy-key.pem
           chmod 400 moongy-key.pem
-          ssh -i moongy-key.pem ubuntu@ec2-44-223-24-163.compute-1.amazonaws.com -c "ls -all"
+          ssh -i moongy-key.pem ubuntu@ec2-44-223-24-163.compute-1.amazonaws.com "ls -all"
