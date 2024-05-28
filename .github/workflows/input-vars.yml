@@ -39,7 +39,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   teste-postgres-sql:
-    if: ${{ github.event.inputs.nuvem }} == "Postgres"
+    if: ${{ github.event.inputs.mensagem }} == 'Postgres'
     uses: ./.github/workflows/postgres.yml
     with:
       config-path: "Postgres"
@@ -48,7 +48,7 @@ jobs:
       SSH_SECRET_KEY: ${{ secrets.SSH_SECRET_KEY }}
     
   teste-oracle-sql:
-    if: ${{ github.event.inputs.nuvem }} == "Oracle"
+    if: ${{ github.event.inputs.mensagem }} == 'Oracle'
     uses: ./.github/workflows/oracle.yml
     with:
       config-path: "Oracle"
