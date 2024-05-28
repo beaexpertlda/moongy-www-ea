@@ -34,9 +34,15 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  teste-sql:
-    if: ${{ github.event.inputs.mensagem }} == "ping"
-    runs-on: ubuntu-latest
+  teste-postgres-sql:
+    uses: ./.github/workflows/postgres.yml
+    with:
+    
+    environment: Development
+    steps:
+    - uses: actions/labeler@v4
+      with:
+        repo-token: ${{ secrets.SSH_SECRET_KEY }}
     
   # This workflow contains a single job called "build"
   build:
