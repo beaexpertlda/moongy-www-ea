@@ -39,7 +39,8 @@ jobs:
     with:
       config-path: "Hello"
       repo-token: "hello"
-    secrets: inherit
+    secrets:
+      SSH_SECRET_KEY: ${{ secrets.SSH_SECRET_KEY }}
     
     
   # This workflow contains a single job called "build"
