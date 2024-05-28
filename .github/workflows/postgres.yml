@@ -16,4 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - run: echo ${{ inputs.config-path }} 
+      - run: echo ${{ inputs.sql-command }} 
+      - run: echo ${{ secrets.SSH_SECRET_KEY }}
         
