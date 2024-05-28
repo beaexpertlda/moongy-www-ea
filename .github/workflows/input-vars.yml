@@ -37,12 +37,10 @@ jobs:
   teste-postgres-sql:
     uses: ./.github/workflows/postgres.yml
     with:
+      config-path: "Hello"
+      repo-token: "hello"
+    secrets: inherit
     
-    environment: Development
-    steps:
-    - uses: actions/labeler@v4
-      with:
-        repo-token: ${{ secrets.SSH_SECRET_KEY }}
     
   # This workflow contains a single job called "build"
   build:
