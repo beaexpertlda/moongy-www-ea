@@ -56,8 +56,9 @@ jobs:
     secrets:
       SSH_SECRET_KEY: ${{ secrets.SSH_SECRET_KEY }}
     
-  # This workflow contains a single job called "build"
+  # Thi workflow contains a single job called "build"
   build:
+    needs: [teste-postgres-sql ]
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
